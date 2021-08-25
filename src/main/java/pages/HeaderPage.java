@@ -1,21 +1,36 @@
 package pages;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class HeaderPage extends BasePage{
+    public HeaderPage(WebDriver driver) {
+        super(driver);
+    }
+    @FindBy(css = "#search")
+    private WebElementFacade searchInput;
+    @FindBy(css = "button[title='Search']")
+    private WebElementFacade searchIcon;
 
+    public void inputSearchTerm(String term) {
+        typeInto(searchInput, term);
+    }
+
+    public void clickSearchIcon() {
+        clickOn(searchIcon);
+    }
     @FindBy(css="#nav li[class*='level0']")
-    private List<WebElement> categoryElements;
+    private List<WebElementFacade> categoryElements;
 
     @FindBy(css=".account-cart-wrapper a[class*='skip-account']")
-    private WebElement account;
+    private WebElementFacade account;
 
     @FindBy(css=".account-cart-wrapper a[class*='skip-cart']")
-    private WebElement cart;
+    private WebElementFacade cart;
 
     public void clickOnAccount(){
         clickOn(account);
@@ -26,7 +41,7 @@ public class HeaderPage extends BasePage{
     }
 
     public void clickOnCategory(String categoryName){
-        for(WebElement category:categoryElements){
+        for(WebElementFacade category:categoryElements){
             if(category.getText().equalsIgnoreCase(categoryName)){
                 clickOn(category);
                 break;

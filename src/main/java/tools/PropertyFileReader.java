@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertyFileReader {
-    public static String getValue(String key){
+    public static String getEnvConstantsItem(String key){
         String value="";
         String path = "src/main/resources/config.properties";
         Properties properties = new Properties();

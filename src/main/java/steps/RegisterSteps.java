@@ -38,7 +38,7 @@ public class RegisterSteps {
         registerPage.fillUserDetails(user);
         registerPage.clickOnRegisterBtn();
         Assert.assertEquals(registerPage.getRegistrationMsg(), MessageConstants.registrationMsg);
-        userDao.saveUser(user);
+        userDao.saveRegisteredUser(user);
 
     }
 

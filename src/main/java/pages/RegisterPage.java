@@ -3,6 +3,7 @@ package pages;
 import models.User;
 import net.bytebuddy.utility.RandomString;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import tools.constants.UserConstants;
@@ -11,6 +12,10 @@ public class RegisterPage extends BasePage{
 
     @FindBy(css=".success-msg span")
     private WebElement registrationMsg;
+
+    public RegisterPage(WebDriver driver) {
+        super(driver);
+    }
 
     public String getRegistrationMsg(){
         return registrationMsg.getText();

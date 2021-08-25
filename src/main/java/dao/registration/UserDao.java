@@ -8,10 +8,12 @@ import java.util.List;
 
 public class UserDao implements UserAbstractDao {
     @Override
-    public void saveUser(User user) {
+    public void saveRegisteredUser(User user) {
         SerenitySessionUtils.saveObjectInSerenitySessionList(SerenityKeyConstants.REGISTER_USERS_LIST,user);
     }
-
+    public void saveLoggedInUser(User user) {
+        SerenitySessionUtils.saveObjectInSerenitySessionList(SerenityKeyConstants.LOGGEDIN_USERS_LIST,user);
+    }
     @Override
     public List<User> getAllUsers() {
         return SerenitySessionUtils.getFromSession(SerenityKeyConstants.REGISTER_USERS_LIST);

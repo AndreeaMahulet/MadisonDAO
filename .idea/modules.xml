@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MadisonDAO.iml" filepath="$PROJECT_DIR$/.idea/modules/MadisonDAO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MadisonDAO.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MadisonDAO.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MadisonDAO.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MadisonDAO.test.iml" />
+    </modules>
+  </component>
+</project>

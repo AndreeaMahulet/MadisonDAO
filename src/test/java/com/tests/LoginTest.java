@@ -1,5 +1,6 @@
 package com.tests;
 
+import factories.UserFactory;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import steps.LoginSteps;
@@ -10,6 +11,7 @@ public class LoginTest extends BaseTest{
 
     @Test
     public void loginTest(){
-        loginSteps.loginWithValidCredentials();
+        loginSteps.goToLogin();
+        loginSteps.loginUser(UserFactory.getUserCredentials());
     }
 }

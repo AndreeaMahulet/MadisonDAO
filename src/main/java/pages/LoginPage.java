@@ -1,34 +1,34 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
+import models.User;
+import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import tools.constants.UserConstants;
 
 public class LoginPage extends BasePage{
-    @FindBy(name="login[username]")
-    private WebElement emailInput;
+    public LoginPage(WebDriver driver){
+        super(driver);
+    }
+    @FindBy(css=".registered-users h2")
+    private WebElementFacade loginMsg;
 
-    @FindBy(name="login[password]")
-    private WebElement passwordInput;
+    @FindBy(css=".my-account h1")
+    private WebElementFacade loggedInMsg;
 
     @FindBy(name="send")
-    private WebElement loginBtn;
+    private WebElementFacade loginBtn;
 
-    public void setEmailInput(String email){
-        typeInto(emailInput,email);
+    public String getLoginMsg(){
+        return loginMsg.getText();
     }
-
-    public void setPasswordInput(String password){
-        typeInto(passwordInput,password);
-    }
-
     public void clickOnLoginBtn(){
         clickOn(loginBtn);
     }
-
-    public void logIn(){
-        setEmailInput(UserConstants.EMAIL);
-        setPasswordInput(UserConstants.PASSWORD);
-        clickOnLoginBtn();
+    public String getLoggedInMsg(){
+        return loggedInMsg.getText();
+    }
+    public void fillUserDetailsLogin(User user){
+        populateInputField("login[username]", user.getEmail());
+        populateInputField("login[password]", user.getPassword());
     }
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.serenity-bdd:serenity-core:2.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.serenity-bdd/serenity-core/2.3.2/374e603c8715c2840d4bf0c453d8f72a7d397658/serenity-core-2.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.serenity-bdd/serenity-core/2.3.2/eb5a6686974d90f25a624f193a6c103adcfb5588/serenity-core-2.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
